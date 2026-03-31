@@ -42,7 +42,7 @@
                 {{-- Cover --}}
                 <td style="padding:12px;">
                     @if($b->cover)
-                        <img src="{{ asset('storage/'.$b->cover) }}"
+                        <img src="{{ asset($b->cover) }}"
                              style="width:50px; height:70px; object-fit:cover; border-radius:4px;">
                     @else
                         <img src="{{ asset('images/default_cover.png') }}"
