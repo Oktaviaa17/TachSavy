@@ -35,6 +35,6 @@ class Buku extends Model
         if ($this->cover) {
             return asset('storage/' . $this->cover);
         }
-        return asset('images/no-cover.png');
+        return asset('images/no-cover.svg');
     }
 }

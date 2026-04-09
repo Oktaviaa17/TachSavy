@@ -42,10 +42,10 @@
                 {{-- Cover --}}
                 <td style="padding:12px;">
                     @if($b->cover)
-                        <img src="{{ asset($b->cover) }}"
+                        <img src="{{ $b->cover_url }}"
                              style="width:50px; height:70px; object-fit:cover; border-radius:4px;">
                     @else
-                        <img src="{{ asset('images/default_cover.png') }}"
+                        <img src="{{ asset('images/no-cover.svg') }}"
                              style="width:50px; height:70px; object-fit:cover; border-radius:4px;">
                     @endif
                 </td>
@@ -54,7 +54,7 @@
                 <td style="padding:12px;">{{ $b->author }}</td>
                 <td style="padding:12px;">{{ $b->publisher }}</td>
                 <td style="padding:12px;">{{ $b->kategori?->name ?? '-' }}</td>
-                <td style="padding:12px; font-weight:bold;">{{ $b->stok }}</td>
+                <td style="padding:12px; font-weight:bold;">{{ $b->stok == 0 ? 'Kosong' : $b->stok }}</td>
 
                 {{-- Aksi --}}
                 @if(auth()->user()->role != 'user')

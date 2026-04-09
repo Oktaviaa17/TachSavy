@@ -42,7 +42,7 @@ class BukuController extends Controller
             'publisher'   => 'required',
             'category_id' => 'required|exists:kategori,id',
             'stok'        => 'required|integer|min:0',
-            'cover'       => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+            'cover'       => 'nullable|image|mimes:jpg,jpeg,png,jfif|max:2048'
         ]);
 
         if ($request->hasFile('cover')) {

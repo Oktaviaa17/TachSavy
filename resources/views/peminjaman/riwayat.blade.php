@@ -97,13 +97,29 @@
 
                             {{-- Status --}}
                             <td>
-                                @if($r->status == 'dipinjam')
+                                @if($r->status == 'pending')
+                                    <span class="badge bg-warning text-dark">
+                                        Pending
+                                    </span>
+                                @elseif($r->status == 'dipinjam')
                                     <span class="badge bg-warning text-dark">
                                         Dipinjam
                                     </span>
-                                @else
+                                @elseif($r->status == 'menunggu_pengembalian')
+                                    <span class="badge bg-info text-dark">
+                                        Menunggu Pengembalian
+                                    </span>
+                                @elseif($r->status == 'dikembalikan')
                                     <span class="badge bg-success">
                                         Dikembalikan
+                                    </span>
+                                @elseif($r->status == 'ditolak')
+                                    <span class="badge bg-danger">
+                                        Ditolak
+                                    </span>
+                                @else
+                                    <span class="badge bg-secondary">
+                                        {{ $r->status }}
                                     </span>
                                 @endif
                             </td>
